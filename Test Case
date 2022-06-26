@@ -1,0 +1,72 @@
+Test Case 1
+
+package Git;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestCase1 {
+	
+
+		public static void main(String[] args) throws InterruptedException {
+			
+			System.setProperty("webdriver.chrome.driver","D:\\selenium\\chromedriver_win32 (1)\\chromedriver.exe");
+
+			WebDriver driver = new ChromeDriver();
+			
+			driver.get("https://github.com/login");
+			driver.manage().window().maximize();
+			
+			
+			driver.findElement(By.xpath("//input[@id=\"login_field\"]")).sendKeys("komalsharma19.set@modyuniversity.ac.in");
+			//Thread.sleep(10000);
+			driver.findElement(By.xpath("//input[@id=\"password\"]")).sendKeys("KOmal@999");
+			//Thread.sleep(10000);
+			driver.findElement(By.xpath("//input[@name=\"commit\"]")).click();
+			driver.findElement(By.xpath("//summary[@\"class=\"Header-link\"]")).click();
+			driver.findElement(By.xpath("//button[@\"class=\"dropdown-item dropdown-signout\"]")).click();
+					
+			}
+	}
+
+
+Test Case 2
+
+
+package Git;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class TestCase2 {
+
+     
+   	public static void main(String[] args) throws InterruptedException {
+			
+			System.setProperty("webdriver.chrome.driver","D:\\selenium\\chromedriver_win32 (1)\\chromedriver.exe");
+
+			WebDriver driver = new ChromeDriver();
+			
+			driver.get("https://github.com/login");
+			driver.manage().window().maximize();
+			
+			driver.findElement(By.xpath("//input[@id=\"login_field\"]")).sendKeys("komalsharma19.set@modyuniversity.ac.in");
+			driver.findElement(By.xpath("//input[@id=\"password\"]")).sendKeys("KOmal@999");
+			driver.findElement(By.xpath("//input[@name=\"commit\"]")).click();
+			driver.findElement(By.xpath("//a[@data-hydro-click-hmac=\"68fc6774cea10bc1a182c9611c7ef0dbe2a5259a9f14377f03b0f709eaffc53f\"]")).click();
+			driver.findElement(By.xpath("//input[@class=\"form-control js-repo-name js-repo-name-auto-check short\"]")).sendKeys("qa-assignment1");
+			driver.findElement(By.xpath("//input[@id=\"repository_visibility_public\"]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//summary[@class=\"btn btn-sm select-menu-button\"]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//label[@class=\"SelectMenu-item text-normal\"]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("data-disable-with=\"Creating repository&hellip;\"")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("data-disable-with=\"Creating repository&hellip;\"")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//summary[@aria-label=\"View profile and more\"]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//button[@class=\"dropdown-item dropdown-signout\"]")).click();
+	}
+}
